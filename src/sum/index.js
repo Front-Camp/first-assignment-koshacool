@@ -10,7 +10,14 @@
 * sum(-1, 13); // 12
 */
 const sum = (a, b) => {
-  /* your logic here...*/
+  [a,b].forEach(val => {
+    if (typeof val !== 'number' || isNaN(val) || !isFinite(val)) {
+      throw new Error('Not number');
+    }
+  })
+
+
+  return a + b;
 };
 
 export default sum;
